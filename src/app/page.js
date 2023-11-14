@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Search from './components/Search';
 import UserProfile from './components/UserProfile'
 import { useState } from 'react';
+import Footer from './components/Footer';
 
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
   return (
    <Container maxW='container.lg'> 
 
-   
+<Footer/>
    <Navbar/>
    <Text  fontSize='4xl' textAlign='center'>
     Search Users on Github
@@ -25,7 +26,14 @@ export default function Home() {
 
     
   {userData &&<UserProfile userData={userData} />}
+
+  
   
     </Container>
+
+   
+
+
+
   )
 }
