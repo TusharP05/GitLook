@@ -16,7 +16,6 @@ export default function Home() {
   return (
    <Container maxW='container.lg'> 
 
-<Footer/>
    <Navbar/>
    <Text  fontSize='4xl' textAlign='center'>
     Search Users on Github
