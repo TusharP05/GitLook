@@ -3,8 +3,20 @@ import { Box } from '@chakra-ui/react'
 import { Flex } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/react';
 import { Image } from "@chakra-ui/react"; // Import Image from Chakra UI
+import HistoryModal from './HistoryModal';
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from '@chakra-ui/react'
 
 const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
   
     <Flex justifyContent={"space-between"} py={"6"} alignItems={"center"} >
@@ -17,10 +29,12 @@ const Navbar = () => {
       </Box>
       
       <Box>
-        <Button size="md" colorScheme="teal">
+        <Button size="md" colorScheme="teal" onClick={onOpen}>
         History
         </Button>
       </Box>
+     {isOpen && <HistoryModal isOpen={isOpen} onClose={onClose}/>}
+     
     </Flex>
   );
 }

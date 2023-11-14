@@ -37,6 +37,7 @@ const Search = ({setUserData, setLoading}) => {
 
             }
             setUserData(data);
+            addUserToLocalStorage(data,query);
 
 
         } catch (error) {
@@ -46,6 +47,22 @@ const Search = ({setUserData, setLoading}) => {
             setIsLoading(false);
         }
     };
+
+   const addUserToLocalStorage=(data,username)=>{
+        const users= JSON.parse(localStorage.getItem('github-users')) || [];
+        const userExists= users.find(user=> user.id===username);
+
+        if(userExists){
+            users.splice(users.indexOf(userExists),1);
+        }
+        users.unshift({
+            id: username,
+            avatar_url: data.avatar_url,
+            name: data.name,
+            url: data.html_url,
+        })
+        localStorage.setItem('github-users', JSON.stringify(users));
+    }
 
     return (
         <Box>
