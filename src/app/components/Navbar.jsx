@@ -49,7 +49,7 @@ const Navbar = () => {
         GitLook
       </Text>
       <Text mt={2} fontSize="sm" color={'teal.500'} fontWeight={'bold'}>
-        by Tushar
+        by Madhavi
       </Text>
     </Box>
       
