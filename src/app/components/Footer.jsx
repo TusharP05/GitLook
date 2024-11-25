@@ -22,7 +22,6 @@ const Footer = () => {
         GitLook
       </Text>
       <Text mt={2} fontSize="sm" color={'teal.500'} fontWeight={'bold'}>
-        by Tushar
       </Text>
     </Box>
   );
